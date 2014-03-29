@@ -2,7 +2,7 @@ require './tile'
 require './leaderboard'
 
 class Minesweeper
-  attr_accessor :board, :time, :pos
+  attr_accessor :board, :time
 
   def initialize(start_board = nil)
     if start_board.nil?
@@ -19,12 +19,6 @@ class Minesweeper
     end
     @pos = [0,0]
   end
-
-   def move(x,y)
-      v,z = @pos
-      @pos = [v+x, y+z]
-  end
-
 
   def puts_bombs
     bombs = []
@@ -154,5 +148,9 @@ class Minesweeper
   end
 
   #STOLEN
+  def move(x,y)
+      v,z = @pos
+      @pos = [v+x, y+z]
+  end
 
 end
